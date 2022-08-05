@@ -22,21 +22,25 @@ The following instructions will get you a copy of the project and all the settin
 npm
 Node.js v10.16.0
 MongoDB v4.0.10
-Clone
+
+# Clone
 Clone this repository to your local machine
 
-$ git clone https://github.com/smallpaes/url-shortener.git
-Setup
-1. Enter the project folder
+$ git clone https://github.com/Michaeljogoh/Url-Shortener/
+
+# 1. Enter the project folder
 
 $ cd url-shortener
-2. Install npm packages
+
+# 2. Install npm packages
 
 $ npm install
-3. Activate the server
+
+# 3. Activate the server
 
 $ npm run dev
-4. Find the message for successful activation
+
+# 4. Find the message for successful activation
 
 > App is running
 > mongodb connected!
