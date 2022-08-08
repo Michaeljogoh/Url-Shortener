@@ -4,7 +4,7 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 const cors = require('cors');
 const mongoose = require('mongoose');
-const UrlShort = require('./routes/urlShort')
+const UrlRoute = require('./routes/urlRoute')
 
 
 // Connect MongoDB
@@ -21,7 +21,7 @@ app.use(cors({credentials: true , origin: true ,  methods: ['GET','POST','DELETE
 app.use(express.json());
 
 //Routes
-app.use(UrlShort)
+app.use(UrlRoute)
 
 
 

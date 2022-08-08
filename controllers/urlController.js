@@ -22,6 +22,16 @@ res.status(200).json({shorten})
 
 }
 
+const getShortUrl = async(req , res) =>{
+    const shortUrl = await Url.findOne({shorturl: req.params.code});
+    if(!shortUrl) {
+        return res.status(404);
+    }
+
+    res.redirect(shortUrl.longurl)
+    res.status(200)
+
+}
 
 
 
@@ -30,4 +40,5 @@ res.status(200).json({shorten})
 
 
 
-module.exports = {createUrlShorten}
+
+module.exports = {createUrlShorten , getShortUrl}
