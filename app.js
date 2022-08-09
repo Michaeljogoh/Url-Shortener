@@ -4,7 +4,8 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 const cors = require('cors');
 const mongoose = require('mongoose');
-const UrlRoute = require('./routes/urlRoute')
+const UrlRoute = require('./routes/urlRoute');
+const errorHandler = require('./middleware/errorHandler')
 
 
 // Connect MongoDB
@@ -21,7 +22,10 @@ app.use(cors({credentials: true , origin: true ,  methods: ['GET','POST','DELETE
 app.use(express.json());
 
 //Routes
-app.use(UrlRoute)
+app.use('/', UrlRoute);
+
+//error handler
+app.use(errorHandler);
 
 
 
