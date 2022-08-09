@@ -2,7 +2,10 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT;
+const cors = require('cors');
 const mongoose = require('mongoose');
+const UrlShort = require('./routes/urlShort')
+
 
 // Connect MongoDB
 const  connectDB = async () =>{
@@ -11,6 +14,14 @@ const  connectDB = async () =>{
 }
 connectDB();
 
+// Cross origin
+app.use(cors({credentials: true , origin: true ,  methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']}))
+
+// express
+app.use(express.json());
+
+//Routes
+app.use(UrlShort)
 
 
 
