@@ -10,28 +10,28 @@ const registerUsers = async (req , res)  =>{
     const {name , email ,  password , password2 } = req.body;
     //Validation
     if(!name || !email || !password || !password2 ){
-        res.status(422).json({error:"Please fill in all field"})
+        res.status(204).json({error:"Please fill in all field"})
     }
 
     if(password !== password2){
-        res.status(422).json({error:"password does not match"})
+        res.status(204).json({error:"password does not match"})
 
     }
 
     if(password < 6){
-       res.status(422).json({error:"password must not be less than six characters"})
+       res.status(204).json({error:"password must not be less than six characters"})
     }
     
     await  Users.findOne({email : email})
     if(email){
-        res.status(422).json({error:"Email already registered"})
+        res.status(204).json({error:"Email already registered"})
      } else {
         
 
     //Hash password
-const  encryptPassword = await bcrypt.hash(password, 10);
+const  hashedPassword = await bcrypt.hash(password, 10);
 
-const newUser = new Users.create({name , email , password:encryptPassword});
+const newUser = await Users.create({name , email , password:hashedPassword});
     
 res.json(201).json({newUser})
 
@@ -53,7 +53,7 @@ const loginUsers = async  (req , res ) =>{
 
 const savedUser =  await Users.findOne({email:email})
         if(!savedUser){
-         res.status(404).json({error:"Invalid Username"})
+         res.status(404).json({error:"Invalid email"})
         }
 
 const doMatch =  await  bcrypt.compare(password, savedUser.password)
