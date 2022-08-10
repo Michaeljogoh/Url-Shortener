@@ -22,8 +22,8 @@ const registerUsers = async (req , res)  =>{
        res.status(204).json({error:"password must not be less than six characters"})
     }
     
-    await  Users.findOne({email : email})
-    if(email){
+   const existEmail = await  Users.findOne({email : email})
+    if(existEmail){
         res.status(204).json({error:"Email already registered"})
      } else {
         
