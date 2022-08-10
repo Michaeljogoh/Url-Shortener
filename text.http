@@ -1,0 +1,7 @@
+
+POST http://localhost:4000/urls
+Content-Type: application/json
+
+{
+"longurl":"https://www.google.com/search?q=status+code+204&sxsrf=ALiCzsaaXSsTY8fcIIiokMFPUoabwsemIg%3A1660124485200&ei=RX3zYvLZC4aE9u8P7PmT6Ag&ved=0ahUKEwiykOTR_bv5AhUGgv0HHez8BI0Q4dUDCA4&uact=5&oq=status+code+204&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEJECMgUIABCRAjIFCAAQkQIyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEJECMgUIABCABDIFCAAQgAQyBQgAEIAEOgcIABBHELADOgcIABCwAxBDOgQIIxAnOgQIABBDSgQIQRgASgQIRhgAUOYCWPAUYLoXaAFwAXgAgAHyBIgByBKSAQM1LTSYAQCgAQHIAQrAAQE&sclient=gws-wiz"
+}
