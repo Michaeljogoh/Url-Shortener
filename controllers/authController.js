@@ -10,21 +10,21 @@ const registerUsers = async (req , res)  =>{
     const {name , email ,  password , password2 } = req.body;
     //Validation
     if(!name || !email || !password || !password2 ){
-        res.status(204).json({error:"Please fill in all field"})
+        res.status(400).json({error:"Please fill in all field"})
     }
 
     if(password !== password2){
-        res.status(204).json({error:"password does not match"})
+        res.status(400).json({error:"password does not match"})
 
     }
 
     if(password < 6){
-       res.status(204).json({error:"password must not be less than six characters"})
+       res.status(400).json({error:"password must not be less than six characters"})
     }
     
-   const existEmail = await  Users.findOne({email : email})
-    if(existEmail){
-        res.status(204).json({error:"Email already registered"})
+   const user = await  Users.findOne({email})
+    if(user){
+        res.status(400).json({error:"Email already registered"})
      } else {
         
 
