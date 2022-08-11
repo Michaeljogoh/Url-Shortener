@@ -18,9 +18,18 @@ The following instructions will get you a copy of the project and all the settin
 # Post Documentation
 
 ```
+
 https://documenter.getpostman.com/view/21519072/VUjQnQVf
 
+```
 
+# Heroku Link
+
+```
+
+https://url-shortener2344.herokuapp.com/
+
+```
 ## Prerequisites
 
 - [npm](https://www.npmjs.com/get-npm)
