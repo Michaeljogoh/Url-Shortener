@@ -15,6 +15,11 @@ User can be redirected to the original URL by visiting the shortened URL
 Installation
 The following instructions will get you a copy of the project and all the setting needed to run it on your local machine.
 
+# Post Documentation
+
+$ https://documenter.getpostman.com/view/21519072/VUjQnQVf
+```
+
 ## Prerequisites
 
 - [npm](https://www.npmjs.com/get-npm)
